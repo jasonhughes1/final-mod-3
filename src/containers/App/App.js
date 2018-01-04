@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import PropTypes, { shape, func, string } from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
 import { fetchData } from '../../utils/fetchHelper';
-import CardList from '../CardList/CardList'
+import CardList from '../CardList/CardList';
+import PropTypes from 'prop-types';
 
 
 class App extends Component {
   componentDidMount() {
-    this.props.fetchAllData()
+    this.props.fetchAllData();
   }
 
 
