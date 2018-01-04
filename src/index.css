@@ -18,4 +18,22 @@ body {
   background-color: grey;
   border-radius: 25px;
   border: 2px solid white;
+  overflow-y: scroll;
+}
+
+
+.display-data {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.display-me {
+  width: 200px;
+}
+
+
+.members {
+  height: 200px;
 }
