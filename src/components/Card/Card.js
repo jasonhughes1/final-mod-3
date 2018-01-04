@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Card = ({ house }) => {
+  console.log(house);
 
   const seats = house.seats.map( seat => <p>{seat}</p>);
   const titles = house.titles.map( title => <p>{title}</p>);
