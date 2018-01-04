@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
 import { fetchData } from '../../utils/fetchHelper';
+import CardList from '../CardList/CardList'
 
 
 class App extends Component {
@@ -20,6 +21,14 @@ class App extends Component {
           }}> FAKE ACTION</button>
         </div>
         <div className='Display-info'>
+          { this.props.allTheHouses
+            ?
+            <CardList />
+            :
+            <div className='loading'>
+              <img src={ require('../../assets/wolf.gif') }/>
+            </div>
+          }
         </div>
       </div>
     );
@@ -34,7 +43,7 @@ App.propTypes = {
 
 
 const mapStateToProps = ({store}) => ({
-  store
+  allTheHouses: store.allTheHouses
 });
 
 
