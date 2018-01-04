@@ -16,22 +16,23 @@ const swornMembersFetch = (incomingData) => {
       name: house.name,
       founded: house.founded,
       seats: house.seats,
-      tiles: house.titles,
+      titles: house.titles,
       coatOfArms: house.coatOfArms,
       ancestralWeapons: house.ancestralWeapons,
       words: house.words
     };
 
-    house.swornMembers.map( character => {
+    const characters = house.swornMembers.map( character => {
       return fetch('http://localhost:3001/api/v1/character', {
         method: 'POST',
         body: JSON.stringify( {url: character } ),
-        header: {
+        headers: {
           'Content-Type': 'application/json'
         }
       })
         .then(response => response.json())
-        .then(person => console.log(person));
+        .then(person => console.log(person.name));
     });
+    console.log(characters);
   });
 };
