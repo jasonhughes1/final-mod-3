@@ -23,7 +23,9 @@ class App extends Component {
         <div className='Display-info'>
           { this.props.allTheHouses.length > 0
             ?
-            <CardList />
+            <CardList
+              allTheHouses={this.props.allTheHouses}
+            />
             :
             <div className='loading'>
               <img src={ require('../../assets/wolf.gif') }/>
@@ -35,10 +37,9 @@ class App extends Component {
   }
 }
 
-
 App.propTypes = {
-  fake: shape({ fake: string }),
-  fakeAction: func.isRequired
+  allTheHouses: PropTypes.arrayOf(PropTypes.object),
+  fetchAllData: PropTypes.func
 };
 
 
