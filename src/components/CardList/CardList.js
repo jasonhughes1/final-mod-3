@@ -10,7 +10,7 @@ const CardList = ({ allTheHouses }) => {
 
   return (
     <div>
-      <h4>{houseData}</h4>
+      <h4 className='card-container'>{houseData}</h4>
     </div>
 
   );

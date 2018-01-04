@@ -8,7 +8,7 @@ const Card = ({ house }) => {
   const ancestralWeapons = house.ancestralWeapons.map( weapon => <p>{weapon}</p>);
 
   return (
-    <div>
+    <div className='card'>
       <h1>{house.name}</h1>
       <p>{house.founded}</p>
       <h2>Seats</h2>
