@@ -8,6 +8,9 @@ import CardList from '../CardList/CardList'
 
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchAllData()
+  }
 
 
   render() {
@@ -16,12 +19,9 @@ class App extends Component {
         <div className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
           <h2>Welcome to Westeros</h2>
-          <button onClick={() => {
-            this.props.fetchAllData();
-          }}> FAKE ACTION</button>
         </div>
         <div className='Display-info'>
-          { this.props.allTheHouses
+          { this.props.allTheHouses.length > 0
             ?
             <CardList />
             :
@@ -42,7 +42,7 @@ App.propTypes = {
 };
 
 
-const mapStateToProps = ({store}) => ({
+const mapStateToProps = (store) => ({
   allTheHouses: store.allTheHouses
 });
 
