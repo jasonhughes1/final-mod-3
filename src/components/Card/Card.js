@@ -19,13 +19,13 @@ class Card extends Component {
   render() {
     const { house } = this.props;
     const seats = house.seats.map( seat =>
-      <p>{seat}</p>);
+      <p key={seat}>{seat}</p>);
     const titles = house.titles.map( title =>
-      <p className='display-me'>{title}</p>);
+      <p key={title} className='display-me'>{title}</p>);
     const ancestralWeapons = house.ancestralWeapons.map( weapon =>
-      <p>{weapon}</p>);
+      <p key={weapon}>{weapon}</p>);
     const members = house.swornMembers.map( (member, index) =>
-      <p className='display-me'>{member}</p>)
+      <p className='display-me' key={index}>{member}</p>);
 
 
     return (
@@ -44,15 +44,18 @@ class Card extends Component {
         <h3>{house.words}</h3>
         {this.state.displayMembers &&
           <div>
-          <h2>Sworm Members</h2>
-        <div className='display-data members'>{members}</div>
-      </div>
-      }
+            <h2>Sworm Members</h2>
+            <div className='display-data members'>{members}</div>
+          </div>
+        }
       </div>
     );
   }
 }
 
+Card.propTypes = {
+  house: PropTypes.object
+};
 
 
 export default Card;

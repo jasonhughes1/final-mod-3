@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 const CardList = ({ allTheHouses }) => {
   const houseData = allTheHouses.map( (house, index) =>
     <Card house={house}
-            key={`house - ${index}`} />);
+      key={`house - ${index}`} />);
 
 
   return (
