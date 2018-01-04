@@ -2,10 +2,11 @@ import { fetchHouseData } from '../actions';
 
 export const fetchData = () => {
   return (dispatch) => {
-    fetch('http://localhost:3001/api/v1/houses')
+    fetch(`http://localhost:3001/api/v1/houses`)
       .then(response => response.json())
       .then(response => swornMembersFetch(response))
-      .then(response => dispatch(fetchHouseData(response)));
+      .then(response => dispatch(fetchHouseData(response)))
+      .catch(error => alert(error));
   };
 };
 
@@ -31,8 +32,13 @@ const swornMembersFetch = (incomingData) => {
         }
       })
         .then(response => response.json())
-        .then(person => console.log(person.name));
+        .then(person => person.name);
     });
-    console.log(characters);
+
+    return Promise.all(characters).then(allMembers =>
+      Object.assign(houseWithoutMember, {swornMembers: allMembers})
+    );
   });
+  return Promise.all(houseWithMember)
+    .then(completeHouseData => completeHouseData);
 };
