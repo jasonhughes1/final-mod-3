@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CardDirectory = () => {
+const CardList = () => {
   return (
-    <div>CARD DIRECTORY!</div>
+    <div>CARD LIST</div>
   );
 };
 
-export default CardDirectory;
+export default CardList;
