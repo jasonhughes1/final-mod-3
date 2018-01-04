@@ -154,7 +154,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": "house - 0",
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "house": Object {
               "ancestralWeapons": Array [
@@ -180,7 +180,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": "house - 1",
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "house": Object {
               "ancestralWeapons": Array [
@@ -314,7 +314,7 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": "house - 0",
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {
               "house": Object {
                 "ancestralWeapons": Array [
@@ -340,7 +340,7 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": "house - 1",
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {
               "house": Object {
                 "ancestralWeapons": Array [
